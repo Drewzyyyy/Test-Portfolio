@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap')
+$Bebas: 'Bebas Neue', cursive
+
+.inner-text
+  display: grid
+  place-items: center
+  font-size: 120px
+  height: 100%
+  width: 100%
+  background-color: #f8f9fa
+  cursor: default
+
+.links
+  display: inline-block
+  line-height: 120px
+  margin: 0px 0px 0px -5px
+  font-family: $Bebas
+  font-size: 150px
+
+.links > span
+  display: inline-block
+
+.links:hover > span
+  animation-name: fade-in
+  animation-duration: 0.20s
+  animation-direction: normal
+  animation-fill-mode: forwards
+  animation-timing-function: linear
+  animation-iteration-count: 1
+
+.links:hover > span:hover
+  color: transparent
+  cursor: pointer
+  -webkit-text-stroke-color: black
+  -webkit-text-stroke-width: 2px
+  background: linear-gradient(131deg, #f72585, #3a0ca3, #4cc9f0)
+  background-size: 400% 400%
+  -webkit-background-clip: text
+  animation: gradient-move 12s ease infinite
+
+//Animations
+@-webkit-keyframes gradient-move
+  0%
+    background-position:1% 0%
+  50%
+    background-position:99% 100%
+  100%
+    background-position:1% 0%
+
+
+@-moz-keyframes gradient-move
+  0%
+    background-position:1% 0%
+  50%
+    background-position:99% 100%
+  100%
+    background-position:1% 0%
+
+
+@keyframes gradient-move
+  0%
+    background-position:1% 0%
+  50%
+    background-position:99% 100%
+  100%
+    background-position:1% 0%
+
+@keyframes fade-in
+  from
+    opacity: 1
+  to
+    opacity: 0

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drewzy 1.0</title>
+</head>
+<body @fadeIn>
+  <div class="inner-text" [ngStyle]="{
+    'background': hoverFirst ? '#fff1e6' :
+      (hoverSecond ? '#fad2e1' : (
+          hoverThird ? '#c5dedd' : (
+            hoverFourth ? '#99c1de' : '#f8f9fa'
+          )
+        )
+      )
+  }" >
+    <h1>
+      <span [ngStyle]="{'opacity' : hoverFirst || hoverSecond || hoverThird || hoverFourth ? '0' : '1' }">Hello I'm</span><br>
+      <div class="links">
+        <span (mouseover)="hoverFirst = true" (mouseout)="hoverFirst=false" routerLink="/home">
+          {{firstLink}}
+        </span>
+        <span (mouseover)="hoverSecond = true" (mouseout)="hoverSecond=false" routerLink="/about">
+          {{secondLink}}
+        </span>
+        <span (mouseover)="hoverThird = true" (mouseout)="hoverThird=false">
+          {{thirdLink}}
+        </span>
+        <span (mouseover)="hoverFourth = true" (mouseout)="hoverFourth=false">
+          {{fourthLink}}
+        </span>
+      </div>
+      <br>
+    </h1>
+  </div>
+</body>
+</html>
+
